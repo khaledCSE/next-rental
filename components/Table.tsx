@@ -1,34 +1,44 @@
-import { FC, Fragment } from 'react';
-import { iRental } from '../contexts/rental.context';
+import { FC, useContext } from 'react';
+import { iRental, rentalContext } from '../contexts/rental.context';
 import classes from './Table.module.scss';
+import data from '../seeds/Data.json';
 
 interface iTable {
     columns: string[];
-    data: any[];
 }
 
 const Table: FC<iTable> = (props) => {
-    const { columns, data } = props;
+    const { columns } = props;
+    const { rentals, setRentals } = useContext(rentalContext);
+    const search = (txt: string) => {
+        if (txt.length === 0) {
+            setRentals(data);
+        } else {
+            const res = rentals.filter((r: iRental) =>
+                r.name.toLowerCase().includes(txt.toLowerCase())
+            );
+            setRentals(res);
+        }
+    };
     return (
         <div className={classes['table-container']}>
             <input
                 type="text"
                 placeholder="Search for rental items"
                 className={classes.search}
+                onChange={(e) => search(e.target.value)}
             />
             <table className={classes['content-table']}>
                 <thead>
                     <tr>
                         <th>#</th>
                         {columns.map((col, i) => (
-                            <Fragment>
-                                <th key={i}>{col}</th>
-                            </Fragment>
+                            <th key={i}>{col}</th>
                         ))}
                     </tr>
                 </thead>
                 <tbody>
-                    {data.map((el: iRental, i) => (
+                    {rentals.map((el: iRental, i: number) => (
                         <tr key={el.code}>
                             <td>{i + 1}</td>
                             <td>{el.name}</td>
