@@ -1,0 +1,59 @@
+@import './colors';
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+        Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    #__next {
+        position: relative;
+        min-height: 100vh;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 10vh minmax(80vh, auto) 10vh;
+        grid-template-areas:
+            'h h h h'
+            'm m m m'
+            'f f f f';
+
+        header {
+            grid-area: h;
+            background: $primary-bg;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            font-size: 1.3rem;
+
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 10vh;
+            width: 100%;
+        }
+        main {
+            grid-area: m;
+        }
+        footer {
+            grid-area: f;
+            background: $primary-bg;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+        }
+    }
+}
