@@ -5,6 +5,7 @@ import data from '../seeds/Data.json';
 
 interface iTable {
     columns: string[];
+    buttons?: any;
 }
 
 const Table: FC<iTable> = (props) => {
@@ -22,12 +23,15 @@ const Table: FC<iTable> = (props) => {
     };
     return (
         <div className={classes['table-container']}>
-            <input
-                type="text"
-                placeholder="Search for rental items"
-                className={classes.search}
-                onChange={(e) => search(e.target.value)}
-            />
+            <div className={classes.controls}>
+                <input
+                    type="text"
+                    placeholder="Search for rental items"
+                    className={classes.search}
+                    onChange={(e) => search(e.target.value)}
+                />
+                <div>{props.children}</div>
+            </div>
             <table className={classes['content-table']}>
                 <thead>
                     <tr>

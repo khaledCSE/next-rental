@@ -15,5 +15,18 @@
         opacity: 0.8;
     }
 
+    &[data-variant='primary'] {
+        background: $primary-bg;
+        @include TxtColor($primary-bg);
+    }
+    &[data-variant='default'] {
+        background: $primary-bg;
+        @include TxtColor($primary-bg);
+    }
+    &[data-variant='secondary'] {
+        background: $secondary-bg;
+        @include TxtColor($secondary-bg);
+    }
+
     @include TxtColor($primary-bg);
 }
