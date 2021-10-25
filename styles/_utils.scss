@@ -1,0 +1,12 @@
+@use 'sass:color';
+@mixin boxShadow {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+@mixin TxtColor($bg) {
+    @if (color.lightness($bg) > 60%) {
+        color: #000;
+    } @else {
+        color: #fff;
+    }
+}
