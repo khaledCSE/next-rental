@@ -15,15 +15,15 @@ export interface iRental {
 }
 
 export const rentalTableCols = [
-    'name',
-    'type',
-    'availability',
-    'needing_repair',
-    'durability',
-    'max_durability',
-    'mileage',
-    'price',
-    'minimum_rent_period',
+    'Name',
+    'Type',
+    'Availability',
+    'Needs Repair',
+    'Durability',
+    'Max Durability',
+    'Mileage',
+    'Price',
+    'Minimum Rent Period',
 ];
 
 export const rentalContext = createContext<any>(data);
