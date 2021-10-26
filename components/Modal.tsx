@@ -1,7 +1,5 @@
-// import { useState } from 'react';
 import { FC } from 'react';
 import classes from './Modal.module.scss';
-import { Close as CloseIcon } from '@material-ui/icons';
 
 interface iModal {
     closeHandler(): any;
@@ -13,7 +11,7 @@ const Modal: FC<iModal> = (props) => {
         <div className={classes.backdrop}>
             <div className={classes.modal}>
                 <span className={classes.close} onClick={props.closeHandler}>
-                    <CloseIcon />
+                    &times;
                 </span>
                 {props.children}
             </div>
