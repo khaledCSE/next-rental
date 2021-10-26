@@ -1,0 +1,11 @@
+@import '../../styles/utils';
+.form {
+    @include flexCenter(column, 20px);
+
+    .select {
+        @include selectStyles();
+    }
+    .input {
+        @include InputStyles();
+    }
+}

@@ -44,7 +44,7 @@
     }
 }
 
-@mixin flexCenter($direction: row, $gap) {
+@mixin flexCenter($direction: row, $gap: null) {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -53,4 +53,17 @@
     @if $gap {
         gap: $gap;
     }
+}
+
+@mixin InputStyles {
+    border: 0;
+    outline: 0;
+    font: inherit;
+    /* Personalize */
+    width: 20em;
+    height: 3em;
+    padding: 0 4em 0 1em;
+    @include TxtColor(#fff);
+    border-radius: 0.25em;
+    box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.2);
 }
