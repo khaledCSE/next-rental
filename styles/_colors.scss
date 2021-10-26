@@ -1,2 +1,7 @@
 $primary-bg: hsl(180, 100%, 25%);
 $secondary-bg: hsl(336, 78%, 43%);
+$glass: rgba(255, 255, 255, 0.2);
+$glass-icon: rgba(255, 255, 255, 0.3);
+$glass: rgba(255, 255, 255, 0.2);
+$glass-icon: rgba($primary-bg, 0.3);
+$option: $primary-bg;
